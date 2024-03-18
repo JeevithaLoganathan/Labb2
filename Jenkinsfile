@@ -6,15 +6,15 @@ pipeline {
     stage('Build') {
       steps {
         dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
-        bat "dir"
         bat "mvn compile"
         }
       }
     } 
     stage('Test') {
       steps {
-        bat "dir"
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         bat "mvn test"
+        }
       }
      post {
       always {
