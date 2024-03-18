@@ -5,11 +5,9 @@ pipeline {
   stages {  
     stage('Build') {
       steps {
-        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         bat "mvn compile"
         }
-      }
-    }  
+      } 
     stage('Test') {
       steps {
         bat "mvn test"
@@ -22,6 +20,7 @@ pipeline {
           sourcePattern: 'src/main/java',
           exclusionPattern: 'src/test*'
           )
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') 
         junit '**/TEST*.xml'
       }
      }
