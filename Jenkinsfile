@@ -16,7 +16,6 @@ pipeline {
         bat "mvn test"
         }
       }
-    stage('Post Test'){
      post {
       always {
         jacoco(
@@ -26,7 +25,6 @@ pipeline {
           exclusionPattern: 'src/test*'
           ) 
         junit '**/TEST*.xml'
-      }
      }
      }
     }
