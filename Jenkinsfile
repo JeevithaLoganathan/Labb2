@@ -16,6 +16,7 @@ pipeline {
         bat "mvn test"
         }
       }
+    stage('Post Test'){
      post {
       always {
         jacoco(
@@ -26,6 +27,7 @@ pipeline {
           ) 
         junit '**/TEST*.xml'
       }
+     }
      }
     }
   }
