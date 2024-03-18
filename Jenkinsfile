@@ -6,16 +6,17 @@ pipeline {
     stage('Build') {
       steps {
         dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
-        bat "dir"
         bat "mvn compile"
         }
       }
     } 
     stage('Test') {
       steps {
-        bat "dir"
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         bat "mvn test"
+        }
       }
+    stage('Post Test'){
      post {
       always {
         jacoco(
@@ -26,6 +27,7 @@ pipeline {
           ) 
         junit '**/TEST*.xml'
       }
+     }
      }
     }
   }
