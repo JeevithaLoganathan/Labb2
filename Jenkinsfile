@@ -11,7 +11,6 @@ pipeline {
       steps {
         sh "mvn test"
       }
-    stage('Post Test'){
      post {
       always {
         jacoco(
@@ -26,4 +25,4 @@ pipeline {
     }
   }
   }
-}
+
