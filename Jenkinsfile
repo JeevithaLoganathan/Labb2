@@ -5,16 +5,19 @@ pipeline {
   stages {  
     stage('Build') {
       steps {
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
+        bat "dir"
         bat "mvn compile"
         }
-      } 
+      }
+    } 
     stage('Test') {
       steps {
+        bat "dir"
         bat "mvn test"
       }
      post {
       always {
-        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
@@ -22,7 +25,6 @@ pipeline {
           exclusionPattern: 'src/test*'
           ) 
         junit '**/TEST*.xml'
-        }
       }
      }
     }
