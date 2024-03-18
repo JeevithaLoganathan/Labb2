@@ -23,6 +23,7 @@ pipeline {
           ) 
         junit '**/TEST*.xml'
         }
+      }
      }
     }
   }
