@@ -14,15 +14,15 @@ pipeline {
       }
      post {
       always {
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
           sourcePattern: 'src/main/java',
           exclusionPattern: 'src/test*'
-          )
-        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') 
+          ) 
         junit '**/TEST*.xml'
-      }
+        }
      }
     }
   }
