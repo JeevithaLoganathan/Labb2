@@ -1,9 +1,11 @@
+
 pipeline {
   agent any 
-
-  stages {
+  
+  stages {  
     stage('Build') {
       steps {
+        dir('C:\Users\ls930499\.jenkins\workspace\Jeevitha\trailrunner')
         bat "mvn compile"
       }
     }  
@@ -14,15 +16,14 @@ pipeline {
      post {
       always {
         jacoco(
-              execPattern: 'target/*.exec',
-              classPattern: 'target/classes',
-              sourcePattern: 'src/main/java',
-              exclusionPattern: 'src/test*'
-              )
+          execPattern: 'target/*.exec',
+          classPattern: 'target/classes',
+          sourcePattern: 'src/main/java',
+          exclusionPattern: 'src/test*'
+          )
         junit '**/TEST*.xml'
       }
      }
     }
   }
-  }
-
+}
