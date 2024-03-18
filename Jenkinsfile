@@ -32,14 +32,14 @@ pipeline {
     stage('Run Robot Tests'){
        steps{
             script{
-           bat 'python -m robot C:\Users\ls930499\.jenkins\workspace\Jeevitha\Selenium'
+           bat 'python -m robot C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium'
            }
 
        }
         post {
           always {
             robot (
-            outputPath: 'C:\Users\ls930499\.jenkins\workspace\Jeevitha\Selenium',
+            outputPath: 'C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium',
             passThreshold: 80.0,
             unstable: true
             )
