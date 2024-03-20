@@ -18,6 +18,7 @@ pipeline {
       }
     }
     stage('Post Test'){
+      steps{
      post {
       always {
         jacoco(
@@ -30,17 +31,17 @@ pipeline {
       } 
      }   
      }
+    }
    
-
     stage('Run Robot Tests'){
        steps{
           script{
            bat 'python -m robot C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium' //change the path to github so that it will be easy to recognize the branch 
            }
-
        }
     }
     stage('Post Robot'){
+      steps{
         post {
           always {
             robot (
@@ -49,6 +50,7 @@ pipeline {
             )
           }
         }
+      } 
     }
   }
 }
