@@ -15,8 +15,8 @@ Log in and book your dates
     Input Password    //input[@id='password']    Yrlj@2015
     Click Button    //button[@id='login']
     Wait Until Element Is Visible    //label[@id='welcomePhrase']
-    Input Text    //input[@id='start']      2024/02/26
-    Input Text    //input[@id='end']    2024/02/28
+    Input Text    //input[@id='start']      2024/04/04
+    Input Text    //input[@id='end']    2024/04/12
     Click Button    //button[@id='continue']
     Wait Until Page Contains Element    //h1[@id='questionText']
 

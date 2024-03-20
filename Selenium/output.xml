@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-03-20T09:43:54.756394" rpa="false" schemaversion="5">
+<suite id="s1" name="Selenium" source="C:\Users\ls930499\Desktop\JenkinsLabb2\Labb2\Selenium">
+<suite id="s1-s1" name="Rental" source="C:\Users\ls930499\Desktop\JenkinsLabb2\Labb2\Selenium\Rental.robot">
+<test id="s1-s1-t1" name="User cannot book a car without login" line="43">
+<kw name="Given Opening The Webpage" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-20T09:43:55.297406" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-20T09:43:55.298410" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-20T09:43:55.297406" elapsed="5.068545"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-20T09:44:00.366452" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-20T09:44:00.366452" elapsed="1.229498"/>
+</kw>
+<tag>VG_test Opening webpage</tag>
+<doc>Car rental</doc>
+<status status="PASS" start="2024-03-20T09:43:55.297406" elapsed="6.298544"/>
+</kw>
+<kw name="When Book Your Dates" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-20T09:44:01.597994" level="INFO">Typing text '2024/04/04' into text field '//input[@id='start']'.</msg>
+<arg>//input[@id='start']</arg>
+<arg>${start_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-20T09:44:01.596953" elapsed="3.917513"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-20T09:44:05.515459" level="INFO">Typing text '2024/04/20' into text field '//input[@id='end']'.</msg>
+<arg>//input[@id='end']</arg>
+<arg>${end_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-20T09:44:05.514466" elapsed="3.115569"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-20T09:44:08.630035" level="INFO">Clicking button '//button[@id='continue']'.</msg>
+<arg>//button[@id='continue']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-20T09:44:08.630035" elapsed="5.131407"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//h1[@id='questionText']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-03-20T09:44:13.762443" elapsed="1.021253"/>
+</kw>
+<arg>${start}</arg>
+<arg>${end}</arg>
+<tag>VG_test Book the dates</tag>
+<doc>Booking the dates for rental</doc>
+<status status="PASS" start="2024-03-20T09:44:01.596953" elapsed="13.187432"/>
+</kw>
+<kw name="Then Booking a car without valid credential" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-20T09:44:14.787388" elapsed="0.001004"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-20T09:44:14.789393" level="INFO">Clicking button '//tbody/tr[6]/td[5]/form[1]/input[4]'.</msg>
+<msg time="2024-03-20T09:44:18.015296" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-20T09:44:18.016299" level="FAIL">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</msg>
+<arg>//tbody/tr[6]/td[5]/form[1]/input[4]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2024-03-20T09:44:14.789393" elapsed="3.311170">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<arg>You need to be logged in to continue.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="NOT RUN" start="2024-03-20T09:44:18.101065" elapsed="0.000000"/>
+</kw>
+<tag>VG_test booking a car without login</tag>
+<doc>user trying to book a car without valid credential</doc>
+<status status="FAIL" start="2024-03-20T09:44:14.786386" elapsed="3.314679">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+</kw>
+<doc>user trying to book a car for rental without login</doc>
+<tag>Booking a car without valid credentials VG_Test</tag>
+<status status="FAIL" start="2024-03-20T09:43:55.295360" elapsed="22.806706">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+</test>
+<doc>Car rental</doc>
+<status status="FAIL" start="2024-03-20T09:43:54.804129" elapsed="23.299944"/>
+</suite>
+<status status="FAIL" start="2024-03-20T09:43:54.761328" elapsed="23.344749"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Booking a car without valid credentials VG_Test</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Selenium">Selenium</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Rental">Selenium.Rental</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
