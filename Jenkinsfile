@@ -21,6 +21,7 @@ pipeline {
       steps{
      post {
       always {
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
@@ -28,6 +29,7 @@ pipeline {
           exclusionPattern: 'src/test*'
           ) 
         junit '**/TEST*.xml'
+        }
       } 
      }   
      }
@@ -36,7 +38,7 @@ pipeline {
     stage('Run Robot Tests'){
        steps{
           script{
-           bat 'python -m robot C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium' //change the path to github so that it will be easy to recognize the branch 
+           bat 'python -m robot C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium' 
            }
        }
     }
