@@ -19,9 +19,7 @@ pipeline {
     }
     stage('Post Test'){
       steps{
-     post {
-      always {
-        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
+        script{
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
@@ -29,11 +27,10 @@ pipeline {
           exclusionPattern: 'src/test*'
           ) 
         junit '**/TEST*.xml'
-        }
       } 
      }   
      }
-    }
+    
    
     stage('Run Robot Tests'){
        steps{
@@ -41,9 +38,6 @@ pipeline {
            bat 'python -m robot C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium' 
            }
        }
-    }
-    stage('Post Robot'){
-      steps{
         post {
           always {
             robot (
@@ -55,4 +49,3 @@ pipeline {
       } 
     }
   }
-}
