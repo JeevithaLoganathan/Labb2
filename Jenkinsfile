@@ -14,7 +14,9 @@ pipeline {
       steps {
         dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         bat "mvn test"
-        }
+        } 
+      }
+    }
     stage('Post Test'){
      post {
       always {
@@ -28,16 +30,17 @@ pipeline {
       } 
      }   
      }
-     }
-    }
+   
 
     stage('Run Robot Tests'){
        steps{
-            script{
-           bat 'python -m robot C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium'
+          script{
+           bat 'python -m robot C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium' //change the path to github so that it will be easy to recognize the branch 
            }
 
        }
+    }
+    stage('Post Robot'){
         post {
           always {
             robot (
