@@ -40,8 +40,7 @@ pipeline {
           always {
             robot (
             outputPath: 'C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium',
-            passThreshold: 80.0,
-            unstable: true
+            passThreshold: 80.0
             )
           }
         }
