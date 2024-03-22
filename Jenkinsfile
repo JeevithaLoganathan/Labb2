@@ -5,14 +5,14 @@ pipeline {
   stages {  
     stage('Build') {
       steps {
-        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner/target') {
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         bat "mvn compile"
         }
       }
     } 
     stage('Test') {
       steps {
-        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner/target') {
         bat "mvn test"
         } 
       }
