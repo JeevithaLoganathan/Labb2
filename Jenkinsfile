@@ -12,7 +12,7 @@ pipeline {
     } 
     stage('Test') {
       steps {
-        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner/target') {
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         bat "mvn test"
         } 
       }
@@ -20,6 +20,7 @@ pipeline {
     stage('Post Test'){
       steps{
         script{
+          dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner/target'){
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
@@ -28,6 +29,7 @@ pipeline {
           ) 
         junit '**/TEST*.xml'
       } 
+        }
      }   
      }
     
