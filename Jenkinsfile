@@ -19,19 +19,16 @@ pipeline {
     }
     stage('Post Test'){
       steps{
-        script{
-          dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha'){
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
           sourcePattern: 'src/main/java',
           exclusionPattern: 'src/test*'
-          ) 
+          )
         junit '**/TEST*.xml'
-      } 
         }
      }   
-     }
+     
     
    
     stage('Run Robot Tests'){
