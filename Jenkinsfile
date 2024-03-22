@@ -12,7 +12,7 @@ pipeline {
     } 
     stage('Test') {
       steps {
-        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner/target/site/jacoco') {
+        dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner') {
         bat "mvn test"
         } 
       }
