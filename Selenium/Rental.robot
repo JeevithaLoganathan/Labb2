@@ -23,7 +23,7 @@ Test invalid login
     When Invalid Logging In
     Then Alert Message For Wrong Password
     
-Book valid dates
+Book valid dates through webpage
     [Documentation]    book your trip through dates
     [Tags]    book valid dates VG_test
 
