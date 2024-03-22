@@ -1,104 +1,680 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-03-20T09:43:54.756394" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-03-22T18:30:57.645328" rpa="false" schemaversion="5">
 <suite id="s1" name="Selenium" source="C:\Users\ls930499\Desktop\JenkinsLabb2\Labb2\Selenium">
 <suite id="s1-s1" name="Rental" source="C:\Users\ls930499\Desktop\JenkinsLabb2\Labb2\Selenium\Rental.robot">
-<test id="s1-s1-t1" name="User cannot book a car without login" line="43">
-<kw name="Given Opening The Webpage" owner="resource">
+<test id="s1-s1-t1" name="Confirm booking for a rental car" line="10">
+<kw name="Given choosing a car for rental with valid credentials" owner="booking">
+<kw name="Log in and book your dates" owner="booking">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>1</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-03-20T09:43:55.297406" elapsed="0.000000"/>
+<status status="PASS" start="2024-03-22T18:30:58.019773" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:43:55.298410" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2024-03-22T18:30:58.020776" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-03-20T09:43:55.297406" elapsed="5.068545"/>
+<status status="PASS" start="2024-03-22T18:30:58.020776" elapsed="2.522809"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:44:00.366452" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
-<arg>${url}</arg>
+<msg time="2024-03-22T18:31:00.543585" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
+<arg>https://rental16.infotiv.net/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-03-20T09:44:00.366452" elapsed="1.229498"/>
-</kw>
-<tag>VG_test Opening webpage</tag>
-<doc>Car rental</doc>
-<status status="PASS" start="2024-03-20T09:43:55.297406" elapsed="6.298544"/>
-</kw>
-<kw name="When Book Your Dates" owner="resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:44:01.597994" level="INFO">Typing text '2024/04/04' into text field '//input[@id='start']'.</msg>
-<arg>//input[@id='start']</arg>
-<arg>${start_date}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-20T09:44:01.596953" elapsed="3.917513"/>
+<status status="PASS" start="2024-03-22T18:31:00.543585" elapsed="1.323081"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:44:05.515459" level="INFO">Typing text '2024/04/20' into text field '//input[@id='end']'.</msg>
-<arg>//input[@id='end']</arg>
-<arg>${end_date}</arg>
+<msg time="2024-03-22T18:31:01.868562" level="INFO">Typing text 'jeevielangovan@gmail.com' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>jeevielangovan@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-20T09:44:05.514466" elapsed="3.115569"/>
+<status status="PASS" start="2024-03-22T18:31:01.867059" elapsed="3.213743"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:05.081747" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2024-03-22T18:31:07.140018" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>//input[@id='password']</arg>
+<arg>Yrlj@2015</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:05.080802" elapsed="3.131416"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:44:08.630035" level="INFO">Clicking button '//button[@id='continue']'.</msg>
+<msg time="2024-03-22T18:31:08.213223" level="INFO">Clicking button '//button[@id='login']'.</msg>
+<arg>//button[@id='login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:08.212218" elapsed="5.302566"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//label[@id='welcomePhrase']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-22T18:31:13.514784" elapsed="2.134316"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:15.649707" level="INFO">Typing text '2024/04/04' into text field '//input[@id='start']'.</msg>
+<arg>//input[@id='start']</arg>
+<arg>2024/04/04</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:15.649707" elapsed="3.158490"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:18.809682" level="INFO">Typing text '2024/04/12' into text field '//input[@id='end']'.</msg>
+<arg>//input[@id='end']</arg>
+<arg>2024/04/12</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:18.808680" elapsed="3.147627"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:21.957919" level="INFO">Clicking button '//button[@id='continue']'.</msg>
 <arg>//button[@id='continue']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-20T09:44:08.630035" elapsed="5.131407"/>
+<status status="PASS" start="2024-03-22T18:31:21.956917" elapsed="5.167338"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>//h1[@id='questionText']</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-03-20T09:44:13.762443" elapsed="1.021253"/>
+<status status="PASS" start="2024-03-22T18:31:27.124757" elapsed="1.034424"/>
+</kw>
+<tag>VG_test login and book dates</tag>
+<doc>login and book dates for trip</doc>
+<status status="PASS" start="2024-03-22T18:30:58.019773" elapsed="30.139408"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:31:28.160169" elapsed="0.000998"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:28.163171" level="INFO">Clicking button '//tbody/tr[6]/td[5]/form[1]/input[4]'.</msg>
+<msg time="2024-03-22T18:31:31.445767" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-22T18:31:31.446772" level="FAIL">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</msg>
+<arg>//tbody/tr[6]/td[5]/form[1]/input[4]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2024-03-22T18:31:28.162168" elapsed="3.361340">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>//input[@id='cardNum']</arg>
+<arg>4333522267778999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-22T18:31:31.523508" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>//input[@id='fullName']</arg>
+<arg>Jeevitha</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-22T18:31:31.524005" elapsed="0.000000"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<arg>//select[@title='Month']</arg>
+<arg>9</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="NOT RUN" start="2024-03-22T18:31:31.524005" elapsed="0.000000"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<arg>//select[@title='Year']</arg>
+<arg>7</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="NOT RUN" start="2024-03-22T18:31:31.524005" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>//input[@id='cvc']</arg>
+<arg>434</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-22T18:31:31.524506" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>//button[@id='confirm']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-22T18:31:31.524506" elapsed="0.000000"/>
+</kw>
+<tag>VG_test Choose Rental Car</tag>
+<doc>Choosing the car for rental</doc>
+<status status="FAIL" start="2024-03-22T18:30:58.018771" elapsed="33.505735">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+</kw>
+<kw name="When After Confirm Booking it Should Show the My Page Button" owner="booking">
+<status status="NOT RUN" start="2024-03-22T18:31:31.525522" elapsed="0.000000"/>
+</kw>
+<kw name="Then See The History Page" owner="booking">
+<status status="NOT RUN" start="2024-03-22T18:31:31.526383" elapsed="0.000000"/>
+</kw>
+<doc>select a car and confirm booking for the trip</doc>
+<tag>choose the car for rental VG_test</tag>
+<status status="FAIL" start="2024-03-22T18:30:58.017767" elapsed="33.509620">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+</test>
+<test id="s1-s1-t2" name="Test valid login credentials" line="18">
+<kw name="Given Opening The Webpage" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:31:31.530229" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:31.530731" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:31:31.530229" elapsed="1.368755"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:32.902500" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:31:32.900990" elapsed="1.495090"/>
+</kw>
+<tag>VG_test Opening webpage</tag>
+<doc>Car rental</doc>
+<status status="PASS" start="2024-03-22T18:31:31.529728" elapsed="2.866352"/>
+</kw>
+<kw name="When Logging In" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:34.403057" level="INFO">Typing text 'jeevielangovan@gmail.com' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:34.402059" elapsed="3.200982"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:37.605042" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2024-03-22T18:31:39.697361" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>//input[@id='password']</arg>
+<arg>${pass}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:37.604041" elapsed="3.204103"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<tag>VG_test Logging In</tag>
+<doc>Logging in with valid username and password</doc>
+<status status="PASS" start="2024-03-22T18:31:34.398041" elapsed="6.410103"/>
+</kw>
+<kw name="Then See the welcome page to book dates after clicking the Continue button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:40.811149" level="INFO">Clicking button '//button[@id='login']'.</msg>
+<arg>//button[@id='login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:40.811149" elapsed="5.414449"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//label[@id='welcomePhrase']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-22T18:31:46.226283" elapsed="2.106981"/>
+</kw>
+<status status="PASS" start="2024-03-22T18:31:40.810147" elapsed="7.524114"/>
+</kw>
+<doc>login with a valid credential</doc>
+<tag>Login VG_test</tag>
+<status status="PASS" start="2024-03-22T18:31:31.529227" elapsed="16.807045"/>
+</test>
+<test id="s1-s1-t3" name="Test invalid login" line="26">
+<kw name="Given Opening The Webpage" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:31:48.349825" elapsed="0.001550"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:48.354384" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:31:48.352366" elapsed="1.392977"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:49.746353" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:31:49.745343" elapsed="1.494535"/>
+</kw>
+<tag>VG_test Opening webpage</tag>
+<doc>Car rental</doc>
+<status status="PASS" start="2024-03-22T18:31:48.345293" elapsed="2.894585"/>
+</kw>
+<kw name="When Invalid Logging In" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:51.240507" level="INFO">Typing text 'jeevielnagovangmai.com' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>jeevielnagovangmai.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:51.240507" elapsed="3.157938"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:54.399145" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2024-03-22T18:31:56.471049" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>//input[@id='password']</arg>
+<arg>yre4453</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:54.399145" elapsed="3.146678"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:31:57.547826" level="INFO">Clicking button '//button[@id='login']'.</msg>
+<arg>//button[@id='login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:31:57.546824" elapsed="5.242340"/>
+</kw>
+<tag>VG_test Invalid Logging In</tag>
+<doc>Logging in with invalid username and password</doc>
+<status status="PASS" start="2024-03-22T18:31:51.240507" elapsed="11.548657"/>
+</kw>
+<kw name="Then Alert Message For Wrong Password" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//label[@id='signInError']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-22T18:32:02.790999" elapsed="2.058110"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:07.879472" level="INFO">${actual_error_message} = Wrong e-mail or password</msg>
+<var>${actual_error_message}</var>
+<arg>//label[@id='signInError']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:04.849109" elapsed="3.031331"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual_error_message}</arg>
+<arg>${expected_error_message}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-22T18:32:07.880440" elapsed="0.001998"/>
+</kw>
+<status status="PASS" start="2024-03-22T18:32:02.790999" elapsed="5.091439"/>
+</kw>
+<doc>test with invalid username and password it should not be login</doc>
+<tag>Invalid Login VG_test</tag>
+<status status="PASS" start="2024-03-22T18:31:48.342288" elapsed="19.542163"/>
+</test>
+<test id="s1-s1-t4" name="Book valid dates" line="34">
+<kw name="Given Opening The Webpage" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:32:07.896480" elapsed="0.000999"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:07.898482" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:32:07.898482" elapsed="1.426212"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:09.325700" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:32:09.324694" elapsed="1.377796"/>
+</kw>
+<tag>VG_test Opening webpage</tag>
+<doc>Car rental</doc>
+<status status="PASS" start="2024-03-22T18:32:07.894477" elapsed="2.808013"/>
+</kw>
+<kw name="When Logging In" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:10.708187" level="INFO">Typing text 'jeevielangovan@gmail.com' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:10.706186" elapsed="3.182104"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:13.892265" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2024-03-22T18:32:15.974079" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>//input[@id='password']</arg>
+<arg>${pass}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:13.888290" elapsed="3.178433"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<tag>VG_test Logging In</tag>
+<doc>Logging in with valid username and password</doc>
+<status status="PASS" start="2024-03-22T18:32:10.704181" elapsed="6.362542"/>
+</kw>
+<kw name="Then See the welcome page to book dates after clicking the Continue button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:17.069740" level="INFO">Clicking button '//button[@id='login']'.</msg>
+<arg>//button[@id='login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:17.068737" elapsed="5.277222"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//label[@id='welcomePhrase']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-22T18:32:22.345959" elapsed="2.098956"/>
+</kw>
+<status status="PASS" start="2024-03-22T18:32:17.068737" elapsed="7.376992"/>
+</kw>
+<kw name="And Book Your Dates" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:24.450769" level="INFO">Typing text '2024/04/04' into text field '//input[@id='start']'.</msg>
+<arg>//input[@id='start']</arg>
+<arg>${start_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:24.448774" elapsed="3.187070"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:27.639614" level="INFO">Typing text '2024/04/20' into text field '//input[@id='end']'.</msg>
+<arg>//input[@id='end']</arg>
+<arg>${end_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:27.638610" elapsed="3.205868"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:30.845290" level="INFO">Clicking button '//button[@id='continue']'.</msg>
+<arg>//button[@id='continue']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:30.845290" elapsed="5.153814"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//h1[@id='questionText']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-03-22T18:32:35.999104" elapsed="1.040630"/>
 </kw>
 <arg>${start}</arg>
 <arg>${end}</arg>
 <tag>VG_test Book the dates</tag>
 <doc>Booking the dates for rental</doc>
-<status status="PASS" start="2024-03-20T09:44:01.596953" elapsed="13.187432"/>
+<status status="PASS" start="2024-03-22T18:32:24.447723" elapsed="12.593025"/>
+</kw>
+<doc>book your trip through dates</doc>
+<tag>book valid dates VG_test</tag>
+<status status="PASS" start="2024-03-22T18:32:07.888455" elapsed="29.153286"/>
+</test>
+<test id="s1-s1-t5" name="User cannot book a car without login" line="43">
+<kw name="Given Opening The Webpage" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:32:37.046795" elapsed="0.001002"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:37.048801" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:32:37.048801" elapsed="1.486171"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:38.535980" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:32:38.535980" elapsed="1.479925"/>
+</kw>
+<tag>VG_test Opening webpage</tag>
+<doc>Car rental</doc>
+<status status="PASS" start="2024-03-22T18:32:37.045748" elapsed="2.976168"/>
+</kw>
+<kw name="When Book Your Dates" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:40.027934" level="INFO">Typing text '2024/04/04' into text field '//input[@id='start']'.</msg>
+<arg>//input[@id='start']</arg>
+<arg>${start_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:40.026930" elapsed="3.214845"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:43.243782" level="INFO">Typing text '2024/04/20' into text field '//input[@id='end']'.</msg>
+<arg>//input[@id='end']</arg>
+<arg>${end_date}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:43.242780" elapsed="3.170225"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:46.413931" level="INFO">Clicking button '//button[@id='continue']'.</msg>
+<arg>//button[@id='continue']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:46.413931" elapsed="5.206638"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//h1[@id='questionText']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-03-22T18:32:51.620569" elapsed="1.036546"/>
+</kw>
+<arg>${start}</arg>
+<arg>${end}</arg>
+<tag>VG_test Book the dates</tag>
+<doc>Booking the dates for rental</doc>
+<status status="PASS" start="2024-03-22T18:32:40.024923" elapsed="12.632192"/>
 </kw>
 <kw name="Then Booking a car without valid credential" owner="resource">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>1</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-03-20T09:44:14.787388" elapsed="0.001004"/>
+<status status="PASS" start="2024-03-22T18:32:52.658118" elapsed="0.000000"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:44:14.789393" level="INFO">Clicking button '//tbody/tr[6]/td[5]/form[1]/input[4]'.</msg>
-<msg time="2024-03-20T09:44:18.015296" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-20T09:44:18.016299" level="FAIL">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</msg>
+<msg time="2024-03-22T18:32:52.658118" level="INFO">Clicking button '//tbody/tr[6]/td[5]/form[1]/input[4]'.</msg>
+<msg time="2024-03-22T18:32:55.924854" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-22T18:32:55.925858" level="FAIL">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</msg>
 <arg>//tbody/tr[6]/td[5]/form[1]/input[4]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2024-03-20T09:44:14.789393" elapsed="3.311170">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+<status status="FAIL" start="2024-03-22T18:32:52.658118" elapsed="3.268744">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
 </kw>
 <kw name="Alert Should Be Present" owner="SeleniumLibrary">
 <arg>You need to be logged in to continue.</arg>
 <doc>Verifies that an alert is present and by default, accepts it.</doc>
-<status status="NOT RUN" start="2024-03-20T09:44:18.101065" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-22T18:32:55.926862" elapsed="0.001003"/>
 </kw>
 <tag>VG_test booking a car without login</tag>
 <doc>user trying to book a car without valid credential</doc>
-<status status="FAIL" start="2024-03-20T09:44:14.786386" elapsed="3.314679">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+<status status="FAIL" start="2024-03-22T18:32:52.657115" elapsed="3.270750">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
 </kw>
 <doc>user trying to book a car for rental without login</doc>
 <tag>Booking a car without valid credentials VG_Test</tag>
-<status status="FAIL" start="2024-03-20T09:43:55.295360" elapsed="22.806706">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+<status status="FAIL" start="2024-03-22T18:32:37.044747" elapsed="18.884121">Button with locator '//tbody/tr[6]/td[5]/form[1]/input[4]' not found.</status>
+</test>
+<test id="s1-s1-t6" name="Check the my page function" line="51">
+<kw name="Given Opening The Webpage" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:32:55.938898" elapsed="0.000999"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:55.940898" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:32:55.939897" elapsed="1.723131"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:57.664535" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:32:57.664032" elapsed="1.574807"/>
+</kw>
+<tag>VG_test Opening webpage</tag>
+<doc>Car rental</doc>
+<status status="PASS" start="2024-03-22T18:32:55.938898" elapsed="3.300943"/>
+</kw>
+<kw name="When Logging In" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:32:59.243850" level="INFO">Typing text 'jeevielangovan@gmail.com' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:32:59.242848" elapsed="3.199703"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:02.443483" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2024-03-22T18:33:04.506034" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>//input[@id='password']</arg>
+<arg>${pass}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:02.442551" elapsed="3.131771"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<tag>VG_test Logging In</tag>
+<doc>Logging in with valid username and password</doc>
+<status status="PASS" start="2024-03-22T18:32:59.241852" elapsed="6.333473"/>
+</kw>
+<kw name="Then Go to my page and check the order" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:33:05.588358" elapsed="0.001003"/>
+</kw>
+<kw name="See the welcome page to book dates after clicking the Continue button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:05.591364" level="INFO">Clicking button '//button[@id='login']'.</msg>
+<arg>//button[@id='login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:05.590362" elapsed="5.318029"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//label[@id='welcomePhrase']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-22T18:33:10.912400" elapsed="2.057898"/>
+</kw>
+<status status="PASS" start="2024-03-22T18:33:05.589361" elapsed="7.380937"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:12.971008" level="INFO">Clicking button '//button[@id='mypage']'.</msg>
+<arg>//button[@id='mypage']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:12.971008" elapsed="5.231592"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//h1[@id='historyText']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-03-22T18:33:18.203600" elapsed="1.044698"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//td[@id='order1']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-22T18:33:19.248298" elapsed="2.056297"/>
+</kw>
+<tag>VG_test check the order</tag>
+<doc>click my page and check the function on my page</doc>
+<status status="PASS" start="2024-03-22T18:33:05.587363" elapsed="15.717232"/>
+</kw>
+<doc>go to my page and check the order id</doc>
+<tag>check the my page function VG_Test</tag>
+<status status="PASS" start="2024-03-22T18:32:55.936888" elapsed="25.380745"/>
+</test>
+<test id="s1-s1-t7" name="check the hide history button function" line="58">
+<kw name="Given check the show history function" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:33:21.335675" elapsed="0.000000"/>
+</kw>
+<kw name="Opening the webpage" owner="resource">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-03-22T18:33:21.336677" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:21.337680" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:33:21.337680" elapsed="1.514741"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:22.852421" level="INFO">Opening url 'https://rental16.infotiv.net/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-03-22T18:33:22.852421" elapsed="1.625234"/>
+</kw>
+<tag>VG_test Opening webpage</tag>
+<doc>Car rental</doc>
+<status status="PASS" start="2024-03-22T18:33:21.335675" elapsed="3.141980"/>
+</kw>
+<kw name="Logging In" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:24.479658" level="INFO">Typing text 'jeevielangovan@gmail.com' into text field '//input[@id='email']'.</msg>
+<arg>//input[@id='email']</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:24.479658" elapsed="3.191078"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:27.675282" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2024-03-22T18:33:29.764448" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>//input[@id='password']</arg>
+<arg>${pass}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:27.671273" elapsed="3.211279"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<tag>VG_test Logging In</tag>
+<doc>Logging in with valid username and password</doc>
+<status status="PASS" start="2024-03-22T18:33:24.478655" elapsed="6.403897"/>
+</kw>
+<kw name="See the welcome page to book dates after clicking the Continue button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:30.884555" level="INFO">Clicking button '//button[@id='login']'.</msg>
+<arg>//button[@id='login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:30.884555" elapsed="5.313694"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//label[@id='welcomePhrase']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-22T18:33:36.198249" elapsed="2.065421"/>
+</kw>
+<status status="PASS" start="2024-03-22T18:33:30.883552" elapsed="7.380118"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:38.264668" level="INFO">Clicking button '//button[@id='mypage']'.</msg>
+<arg>//button[@id='mypage']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:38.263670" elapsed="5.235598"/>
+</kw>
+<tag>VG_test test the show history function</tag>
+<doc>check the show history button function</doc>
+<status status="PASS" start="2024-03-22T18:33:21.334673" elapsed="22.164595"/>
+</kw>
+<kw name="When click the history button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:43.506285" level="INFO">Clicking button '//button[@id='show']'.</msg>
+<arg>//button[@id='show']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:43.505280" elapsed="5.148728"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//h1[@id='historyText']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-03-22T18:33:48.655008" elapsed="1.021312"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//td[@id='orderHis1']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-22T18:33:49.676320" elapsed="2.081421"/>
+</kw>
+<status status="PASS" start="2024-03-22T18:33:43.500265" elapsed="8.258479"/>
+</kw>
+<kw name="Then check the hide history button" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-03-22T18:33:51.763760" level="INFO">Clicking button '//button[@id='hide']'.</msg>
+<arg>//button[@id='hide']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-22T18:33:51.762754" elapsed="5.175083"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>//td[@id='orderHis1']</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-03-22T18:33:56.937837" elapsed="1.009072"/>
+</kw>
+<status status="PASS" start="2024-03-22T18:33:51.761752" elapsed="6.195689"/>
+</kw>
+<doc>check the hide history button</doc>
+<tag>press the hide history button VG_Test</tag>
+<status status="PASS" start="2024-03-22T18:33:21.332672" elapsed="36.636310"/>
 </test>
 <doc>Car rental</doc>
-<status status="FAIL" start="2024-03-20T09:43:54.804129" elapsed="23.299944"/>
+<status status="FAIL" start="2024-03-22T18:30:57.681468" elapsed="180.291521"/>
 </suite>
-<status status="FAIL" start="2024-03-20T09:43:54.761328" elapsed="23.344749"/>
+<status status="FAIL" start="2024-03-22T18:30:57.648379" elapsed="180.327618"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="5" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="0" fail="1" skip="0">Booking a car without valid credentials VG_Test</stat>
+<stat pass="1" fail="0" skip="0">book valid dates VG_test</stat>
+<stat pass="1" fail="0" skip="0">check the my page function VG_Test</stat>
+<stat pass="0" fail="1" skip="0">choose the car for rental VG_test</stat>
+<stat pass="1" fail="0" skip="0">Invalid Login VG_test</stat>
+<stat pass="1" fail="0" skip="0">Login VG_test</stat>
+<stat pass="1" fail="0" skip="0">press the hide history button VG_Test</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Selenium">Selenium</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Rental">Selenium.Rental</stat>
+<stat pass="5" fail="2" skip="0" id="s1" name="Selenium">Selenium</stat>
+<stat pass="5" fail="2" skip="0" id="s1-s1" name="Rental">Selenium.Rental</stat>
 </suite>
 </statistics>
 <errors>

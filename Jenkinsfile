@@ -20,7 +20,7 @@ pipeline {
     stage('Post Test'){
       steps{
         script{
-          dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha/trailrunner/target'){
+          dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha'){
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
