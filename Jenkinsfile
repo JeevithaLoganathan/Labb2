@@ -17,7 +17,7 @@ pipeline {
         } 
       }
     }
-    stage {
+    stage('Post Test') {
       steps {
         jacoco(
           execPattern: 'target/*.exec',
@@ -26,11 +26,9 @@ pipeline {
           exclusionPattern: 'src/test*'
           )
         junit '**/TEST*.xml'
-        }
-        }
+      }
+    }
     
-         
-   
     stage('Run Robot Tests'){
        steps{
           script{
