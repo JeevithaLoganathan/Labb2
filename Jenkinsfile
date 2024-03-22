@@ -22,10 +22,10 @@ pipeline {
         script{
           dir('C:/Users/ls930499/.jenkins/workspace/Jeevitha'){
         jacoco(
-          execPattern: 'target/*.exec',
-          classPattern: 'target/classes',
-          sourcePattern: 'src/main/java',
-          exclusionPattern: 'src/test*'
+          execPattern: 'C:/Users/ls930499/.jenkins/workspace/Jeevitha/target/*.exec',
+          classPattern: 'C:/Users/ls930499/.jenkins/workspace/Jeevitha/target/classes',
+          sourcePattern: 'C:/Users/ls930499/.jenkins/workspace/Jeevitha/src/main/java',
+          exclusionPattern: 'C:/Users/ls930499/.jenkins/workspace/Jeevitha/src/test*'
           ) 
         junit '**/TEST*.xml'
       } 
