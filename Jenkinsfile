@@ -19,12 +19,14 @@ pipeline {
     }
     stage('Post Test'){
       steps{
+        echo 'Running Jacoco code coverage analysis'
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
           sourcePattern: 'src/main/java',
           exclusionPattern: 'src/test*'
           )
+          echo 'Jacoco code coverage analysis completed'
         junit '**/TEST*.xml'
         }
      }   
