@@ -17,10 +17,8 @@ pipeline {
         } 
       }
     }
-    stage('Post Test'){
-      steps{
-        post {
-          always {
+    post {
+      always {
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
@@ -30,10 +28,7 @@ pipeline {
         junit '**/TEST*.xml'
         }
         }
-      }
-     }   
-     
-    
+         
    
     stage('Run Robot Tests'){
        steps{
