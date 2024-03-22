@@ -16,7 +16,6 @@ pipeline {
         bat "mvn test"
         } 
       }
-    }
     post {
       always {
         jacoco(
@@ -28,6 +27,7 @@ pipeline {
         junit '**/TEST*.xml'
         }
         }
+    }
          
    
     stage('Run Robot Tests'){
