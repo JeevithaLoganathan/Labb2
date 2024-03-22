@@ -41,7 +41,7 @@ pipeline {
         post {
           always {
             robot (
-            outputPath: 'C:/Users/ls930499/.jenkins/workspace/Jeevitha/Selenium',
+            outputPath: 'C:/Users/ls930499/.jenkins/workspace/Jeevitha',
             passThreshold: 80.0, unstableThreshold: 70.0, onlyCritical: false
             )
           }
