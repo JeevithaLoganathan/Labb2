@@ -16,9 +16,8 @@ pipeline {
         bat "mvn test"
         } 
       }
-    }
-    stage('Post Test') {
-      steps {
+    post {      
+      always {
         jacoco(
           execPattern: 'target/*.exec',
           classPattern: 'target/classes',
@@ -27,6 +26,7 @@ pipeline {
           )
         junit '**/TEST*.xml'
       }
+    }
     }
     
     stage('Run Robot Tests'){
